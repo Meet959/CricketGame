@@ -94,7 +94,7 @@ function GetPlayersFromMainDistributePage(){
 }
 
 function GetAllValueFromLocalStorage(){
-    if($("#P11").val() = ""){
+    if(localStorage.getItem("P11") == ""){
         GetPlayersFromMainDistributePage();
     }else{
         GetPlayersFromLocalStorage();
