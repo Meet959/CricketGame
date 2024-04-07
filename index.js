@@ -1,4 +1,4 @@
-
+const redirectFirst = 1;
 function CalculateRuns()
 {
     SetAllValueToLocalStorage();
@@ -81,8 +81,8 @@ function ClearPlayersFromLocalStorage(){
 }
 
 $(document).ready(()=>{
-    GetAllValueFromLocalStorage();
-})
+    GetAllStats(localStorage.getItem("DoNotLoadDocReady"));
+});
 
 function GetPlayersFromMainDistributePage(){
     for(var i = 1;i<=8;i++)
@@ -93,13 +93,16 @@ function GetPlayersFromMainDistributePage(){
     }
 }
 
-function GetAllValueFromLocalStorage(){
-    if(localStorage.getItem("P11") == ""){
-        GetPlayersFromMainDistributePage();
+function GetAllStats(status) {
+    debugger
+    if(status == "true" || status == true ){
+        GetPlayersFromMainDistributePage()
+        localStorage.setItem("DoNotLoadDocReady" ,true);
     }else{
         GetPlayersFromLocalStorage();
+        GetRunsFromLocalStorage();
+        localStorage.setItem("DoNotLoadDocReady" ,false);
     }
-    GetRunsFromLocalStorage();
 }
 
 function SetAllValueToLocalStorage(){
