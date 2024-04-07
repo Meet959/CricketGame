@@ -94,7 +94,6 @@ function GetPlayersFromMainDistributePage(){
 }
 
 function GetAllStats(status) {
-    debugger
     if(status == "true" || status == true ){
         GetPlayersFromMainDistributePage()
         localStorage.setItem("DoNotLoadDocReady" ,true);
