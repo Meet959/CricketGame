@@ -1,4 +1,4 @@
-const redirectFirst = 1;
+
 function CalculateRuns()
 {
     SetAllValueToLocalStorage();
@@ -94,9 +94,8 @@ function GetPlayersFromMainDistributePage(){
 }
 
 function GetAllValueFromLocalStorage(){
-    if(redirectFirst==1){
+    if($("#P11").val() = ""){
         GetPlayersFromMainDistributePage();
-        redirectFirst = 2
     }else{
         GetPlayersFromLocalStorage();
     }
