@@ -109,13 +109,13 @@
 			
 			<iframe src="https://free.timeanddate.com/clock/i9baleut/n423/tlin7/fn14/fs19/fcfff/tct/pct/pd2/tt0/tw0/th2/tb4" frameborder="0" width="134" style="float:right;margin-top:-3.5%" height="51" allowtransparency="true"></iframe>
 
-            <div class="" id="GoToPreviousStats">   <a type="button" onclick="GetAllStats(false)" class="btn btn-warning" href="Stats.html">Go To Old Stats</a></div>
         </div>
         
     </section>
     <div class="row" style="min-height:780px">
         <div style="float:left;width:30%;margin-top:12%">
             <div class=" row" style="float:left;display:contents">
+				<div class="mb-3" id="GoToPreviousStats">   <a type="button" onclick="GetAllStats(false)" class="btn btn-warning" href="Stats.html">Go To Old Stats</a></div>
                 <div class="col-sm-12 mb-3">    <input class="tb form-control form-control-sm " placeholder="Player 1" type="text" id="p1" value=""></div>
                 <div class="col-sm-12 mb-3">    <input class="tb form-control form-control-sm " placeholder="Player 2" type="text" id="p2" value=""></div>
                 <div class="col-sm-12 mb-3">    <input class="tb form-control form-control-sm " placeholder="Player 3" type="text" id="p3" value=""></div>
@@ -345,27 +345,27 @@
             }
         }
 
-//  function fetchFromOffset(offset, cb) {
-//              $.get('https://api.cricapi.com/v1/series_info?apikey=110fb904-0998-40b0-89f2-dd1d207e1378&id=76ae85e2-88e5-4e99-83e4-5f352108aebc', function (data) {
-//                  if (data.status != "success") { alert("Failed"); return; }
-//                  let datarray = data.data;
+  function fetchFromOffset(offset, cb) {
+              $.get('https://api.cricapi.com/v1/series_info?apikey=110fb904-0998-40b0-89f2-dd1d207e1378&id=76ae85e2-88e5-4e99-83e4-5f352108aebc', function (data) {
+                  if (data.status != "success") { alert("Failed"); return; }
+                  let datarray = data.data;
 
-//  			var  matchitems= datarray["matchList"]
-//  					$.each(matchitems, function( index, value ) {
-//  					if	(value["date"]== new Date().toISOString().split('T')[0] )
-//  						$("#matchTitle").append("<p>"+value["name"] +"</p>");
-//  						console.log("Match :" + value["name"] );
-//  						console.log("Date :" + value["date"] );
-//                         // localStorage.setItem("MatchDate",value["date"])
-//                         // localStorage.setItem("MatchValue",value["name"])
-//  					});
+  			var  matchitems= datarray["matchList"]
+  					$.each(matchitems, function( index, value ) {
+  					if	(value["date"]== new Date().toISOString().split('T')[0] )
+  						$("#matchTitle").append("<p>"+value["name"] +"</p>");
+  						console.log("Match :" + value["name"] );
+  						console.log("Date :" + value["date"] );
+                         // localStorage.setItem("MatchDate",value["date"])
+                         // localStorage.setItem("MatchValue",value["name"])
+  					});
 					
-//              });
-//          }
-//                  fetchFromOffset(0, function (data) {
-//                      console.log("Complete data got!", data);
+             });
+         }
+                 fetchFromOffset(0, function (data) {
+                     console.log("Complete data got!", data);
 					
-// });
+ });
     </script>
 </body>
 </html>
