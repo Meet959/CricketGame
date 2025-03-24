@@ -81,6 +81,7 @@ function ClearPlayersFromLocalStorage(){
 }
 
 $(document).ready(()=>{
+    GetPlayerNameFromIndex();
     GetAllStats(localStorage.getItem("DoNotLoadDocReady"));
 });
 
@@ -132,5 +133,11 @@ function ClearRunsFromLocalStorage(){
     for(var i=1;i<=6;i++){
         localStorage.setItem("F"+i,"");
         localStorage.setItem("S"+i,"");
+    }
+}
+
+function GetPlayerNameFromIndex(){
+    for(i=1;i<=8;i++){
+        $(`#Player${i}Name`).html(localStorage.getItem("p"+i) + ' :');
     }
 }
